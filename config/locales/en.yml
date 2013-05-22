@@ -1,12 +1,17 @@
 en:
+  artist_login_only: "Sorry, only artists Can login through this portal"
+  artist_login_page: "Artist Login"
   logged_in_as: "Logged in as"
   logged_in_succesfully: "Logged in successfully"
+  artist_logged_in_succesfully: "Artist logged in successfully"
   logged_out: "You have been logged out."
   login: Login
+  artist_login: Artist Login
   login_as_existing: "Login as Existing Customer"
   login_failed: "Login authentication failed."
   login_name: Login
   logout: Logout
+  artist_profile: "Your Profile"
 
   errors:
     messages:

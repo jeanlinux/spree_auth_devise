@@ -39,7 +39,11 @@ module Spree
     def admin?
       has_spree_role?('admin')
     end
-
+    
+    def artist?
+      has_spree_role?('artist')
+    end
+    
     def anonymous?
       email =~ /@example.net$/ ? true : false
     end

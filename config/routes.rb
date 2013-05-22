@@ -13,6 +13,8 @@ Spree::Core::Engine.routes.prepend do
 
   devise_scope :spree_user do
     get '/login' => 'user_sessions#new', :as => :login
+    get '/artistlogin' => 'artist_sessions#new', :as => :artistlogin
+    post '/artistsession' => 'artist_sessions#create', :as => :artist_session
     get '/logout' => 'user_sessions#destroy', :as => :logout
     # Necessary for #78
     get '/logout' => 'user_sessions#destroy', :as => :destroy_user_session

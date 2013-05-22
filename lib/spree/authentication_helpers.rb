@@ -3,6 +3,7 @@ module Spree
     def self.included(receiver)
       receiver.send :helper_method, :spree_current_user
       receiver.send :helper_method, :spree_login_path
+      receiver.send :helper_method, :spree_artistlogin_path
       receiver.send :helper_method, :spree_signup_path
       receiver.send :helper_method, :spree_logout_path
     end
@@ -13,6 +14,10 @@ module Spree
 
     def spree_login_path
       spree.login_path
+    end
+    
+    def spree_artistlogin_path
+      spree.artistlogin_path
     end
 
     def spree_signup_path
