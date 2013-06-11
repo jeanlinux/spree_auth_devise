@@ -24,7 +24,12 @@ class Spree::UserRegistrationsController < Devise::RegistrationsController
   def create
     @user = build_resource(params[:spree_user])
     if resource.save
-      set_flash_message(:notice, :signed_up)
+      if !params[:spree_user][:request_telephone].blank?
+        #user requested to be an artist in the syste,
+        set_flash_message(:notice, :artist_request_signed_up)
+      else
+        set_flash_message(:notice, :signed_up)
+      end
       sign_in(:spree_user, @user)
       session[:spree_user_signup] = true
       associate_user

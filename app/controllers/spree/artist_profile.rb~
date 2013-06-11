@@ -1,4 +1,4 @@
-class Spree::ArtistProfileController < Spree::BaseController
+class Spree::ArtistprofileController < Spree::BaseController
 
 
   def profile

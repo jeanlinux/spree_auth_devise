@@ -1,4 +1,8 @@
 <p>
+  <%= f.label :full_name, t(:full_name) %><br />
+  <%= f.text_field :full_name, :class => 'title',:required => true %>
+</p>
+<p>
   <%= f.label :email, t(:email) %><br />
   <%= f.email_field :email, :class => 'title' %>
 </p>
@@ -13,5 +17,57 @@
     <%= f.password_field :password_confirmation, :class => 'title' %>
   </p>
 </div>
+<p class="field" id=<%="#user_profile_country" %>>
+  <%= f.label :country_id, t(:country) %><span class="required">*</span><br />
+    <span id=<%="#user_profile_country-selection" %>>
+      <%= f.collection_select :country_id, available_countries, :id, :name, {}, {:class => 'required'} %>
+    </span>
+</p>
+
+<p class="field" id=<%="user_profile_city" %>>
+  <%= f.label :city, t(:city) %><span class="required">*</span><br />
+  <%= f.text_field :city, :class => 'required' %>
+</p>
+
+<p>
+  <% if @spree_user && @spree_user.new_record? %>
+
+  <label>
+    <%= f.check_box :request_telephone %>
+    <%= f.label :artist_request_toggle, t(:artist_request_toggle) %>
+  </label>
+</p>
+<p id="request_telephone">
+  <%= f.label :request_telephone, t(:request_telephone) %><span class="required">*</span><br />
+  <%= f.text_field :request_telephone, :class => 'title required' %>
+</p>
+<%	elsif @user.has_spree_role? :artist %>
+      <p>
+        <%= f.label :about_artist, t(:about_artist) %><br />
+        <%= f.text_area :about %>
+      </p>
+
+      <p>
+        <%= f.label :twitter, t(:twitter) %><br />
+        <%= f.text_field :twitter%>
+      </p>
+
+      <p>
+        <%= f.label :facebook, t(:facebook) %><br />
+        <%= f.text_field :facebook%>
+      </p>
+
+      <p>
+        <%= f.label :website, t(:website) %><br />
+        <%= f.text_field :website %>
+      </p>
+
+<%	end  %>
 
 <div data-hook="signup_below_password_fields"></div>
+
+<script type="text/javascript">
+  $("#spree_user_request_telephone").click(function(){
+     $("p#request_telephone").toggle('slow');
+  });
+</script>

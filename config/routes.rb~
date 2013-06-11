@@ -26,6 +26,9 @@ Spree::Core::Engine.routes.prepend do
 
   match '/orders/:id/token/:token' => 'orders#show', :via => :get, :as => :token_order
 
+  #artist profile page
+  match '/artists/profile' => 'artists#profile', :via => :get, :as => :artists
+
   resource :session do
     member do
       get :nav_bar

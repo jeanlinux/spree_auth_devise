@@ -1,4 +1,6 @@
 en:
+  artist_request_toggle: "I'm an artist and i will like to be part of Made in Africa"
+  request_telephone: "Telephone number to confirm your artist account request"
   artist_login_only: "Sorry, only artists Can login through this portal"
   artist_login_page: "Artist Login"
   logged_in_as: "Logged in as"
@@ -40,6 +42,7 @@ en:
       confirmed: 'Your account was successfully confirmed. You are now signed in.'
     user_registrations:
       signed_up: 'Welcome! You have signed up successfully.'
+      artist_request_signed_up: 'Welcome! You have signed up successfully and we will look into your artist account request'
       inactive_signed_up: 'You have signed up successfully. However, we could not sign you in because your account is %{reason}.'
       updated: 'You updated your account successfully.'
       destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'

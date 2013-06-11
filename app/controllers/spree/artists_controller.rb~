@@ -1,0 +1,7 @@
+class Spree::ArtistsController < Spree::BaseController
+
+  def show
+       render  :artist_profile
+  end
+
+end

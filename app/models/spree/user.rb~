@@ -6,24 +6,16 @@ module Spree
            :rememberable, :trackable, :validatable, :encryptable, :encryptor => 'authlogic_sha512'
 
     has_many :orders
-    has_many :arts, :foreign_key => 'artist_id', :class_name => 'Spree::Product'
-    belongs_to :country, :foreign_key => 'country_id', :class_name => 'Spree::Country'
+    has_many :products, :foreign_key => 'artist_id', :class_name => 'Spree::Product'
     belongs_to :ship_address, :foreign_key => 'ship_address_id', :class_name => 'Spree::Address'
     belongs_to :bill_address, :foreign_key => 'bill_address_id', :class_name => 'Spree::Address'
-
-    before_validation do
-      request_telephone = request_telephone.to_s.gsub('-','').to_i
-    end
 
     before_save :check_admin
     before_validation :set_login
     before_destroy :check_completed_orders
 
     # Setup accessible (or protected) attributes for your model
-    attr_accessible :email, :password, :password_confirmation, :remember_me, :persistence_token, :login, :full_name,
-                    :request_telephone,:city,:country_id,:facebook,:twitter,:about,:website
-
-
+    attr_accessible :email, :password, :password_confirmation, :remember_me, :persistence_token, :login
 
     users_table_name = User.table_name
     roles_table_name = Role.table_name
@@ -60,10 +52,6 @@ module Spree
     def send_reset_password_instructions
       generate_reset_password_token!
       UserMailer.reset_password_instructions(self).deliver
-    end
-
-    def getLocation
-        "#{country.iso_name}, #{city} (#{country.iso})"
     end
 
     protected
