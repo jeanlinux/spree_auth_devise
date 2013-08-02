@@ -9,6 +9,7 @@ en:
   logged_out: "You have been logged out."
   login: Customer Login
   signup: Sign Up
+  admin_panel: "Admin Panel"
   artist_login: Artist Login
   login_as_existing: "Login as Existing Customer"
   login_failed: "Login authentication failed."
