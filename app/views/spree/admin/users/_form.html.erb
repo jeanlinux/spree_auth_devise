@@ -1,5 +1,17 @@
 <div data-hook="admin_user_form_fields" class="row">
   <div class="alpha five columns">
+      <%= f.field_container :full_name do %>
+        <%= f.label :full_name, t(:full_name) %>
+        <%= f.email_field :full_name, :class => 'fullwidth' %>
+        <%= error_message_on :user, :full_name %>
+      <% end %>
+	  
+      <%= f.field_container :city do %>
+        <%= f.label :city, t(:city) %>
+        <%= f.email_field :city, :class => 'fullwidth' %>
+        <%= error_message_on :user, :city %>
+      <% end %>
+	  
     <%= f.field_container :email do %>
       <%= f.label :email, t(:email) %>
       <%= f.email_field :email, :class => 'fullwidth' %>
