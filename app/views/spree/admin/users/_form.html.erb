@@ -2,13 +2,14 @@
   <div class="alpha five columns">
       <%= f.field_container :full_name do %>
         <%= f.label :full_name, t(:full_name) %>
-        <%= f.email_field :full_name, :class => 'fullwidth' %>
+        <%= f.text_field :full_name, :class => 'fullwidth' %>
         <%= error_message_on :user, :full_name %>
       <% end %>
+
 	  
       <%= f.field_container :city do %>
         <%= f.label :city, t(:city) %>
-        <%= f.email_field :city, :class => 'fullwidth' %>
+        <%= f.text_field :city, :class => 'fullwidth' %>
         <%= error_message_on :user, :city %>
       <% end %>
 	  
