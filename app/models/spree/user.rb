@@ -63,11 +63,11 @@ module Spree
     end
 
     def getLocation
-      try{
-        "#{country.iso_name}, #{city} (#{country.iso})"
-      }catch(Exception e){
-        return "Unknown"
-      }
+      begin
+         "#{country.iso_name}, #{city} (#{country.iso})"
+      rescue Exception => e
+          return "Unknown"
+      end
     end
 
     protected
