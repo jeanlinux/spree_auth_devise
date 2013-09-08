@@ -66,8 +66,24 @@ module Spree
       begin
          "#{country.iso_name}, #{city} (#{country.iso})"
       rescue Exception => e
-          return "Unknown"
+         "Unknown"
       end
+    end
+
+    def getTwitterlink
+       if twitter
+         "http://www.twitter.com/#{twitter}"
+       else
+         "http://www.twitter.com/#"
+       end
+    end
+
+  def getFacebooklink
+       if facebook
+         "http://www.facebook.com/#{twitter}"
+       else
+         "http://www.facebook.com/#"
+       end
     end
 
     protected
