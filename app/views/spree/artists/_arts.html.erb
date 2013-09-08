@@ -5,7 +5,7 @@
   <!--<a href="#"><img src="img/friend_avatar_default.jpg" width="30" height="30" alt="Jerry K."></a>-->
 
  <%# if product_image(art) %>
-  	<%= product_image(art, :itemprop => "image", :width => "45", :height => "45") %>
+  	<%= link_to  product_image(art, :itemprop => "image", :width => "45", :height => "45"), art %>
  <%# else %>
   	<%#	 link_to (image_tag "artist_noimage.jpg", :width=>"45", :height=>"45"), art %>
  <%# end %>

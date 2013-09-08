@@ -13,4 +13,10 @@ class Spree::ArtistsController < Spree::BaseController
     end
   end
 
+  def gallery
+    @artist = Spree::User.find_by_id(params[:id])
+    @arts = @artist.arts
+      render :gallery
+  end
+
 end

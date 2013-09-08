@@ -52,7 +52,7 @@
           <%= render :partial => "arts" %>
         </div>
 
-        <span><a href="#">See all...</a></span>
+        <span> <%= link_to "See all...", gallery_url(@artist.id)  %> </span>
       </div>
     </div>
   </section>
