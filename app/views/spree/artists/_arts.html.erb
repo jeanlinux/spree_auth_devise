@@ -1,9 +1,14 @@
 <% if @arts %>
     <%	 @arts.each do |art| %>
-<% if art.display? %>
+<% if art.on_display? %>
 <div class="art">
   <!--<a href="#"><img src="img/friend_avatar_default.jpg" width="30" height="30" alt="Jerry K."></a>-->
-  <%=	 link_to (image_tag "artist_noimage.jpg", :width=>"45", :height=>"45"), art %>
+
+ <%# if product_image(art) %>
+  	<%= link_to  product_image(art, :itemprop => "image", :width => "45", :height => "45"), art %>
+ <%# else %>
+  	<%#	 link_to (image_tag "artist_noimage.jpg", :width=>"45", :height=>"45"), art %>
+ <%# end %>
 
 </div>
 

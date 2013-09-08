@@ -11,8 +11,8 @@
         <h3><%=	 @artist.getLocation %></h3>
         <h4><a href="http://spyrestudios.com/"><%=	@artist.website  %></a></h4>
         <div class="socialMediaLinks">
-          <a href="http://twitter.com/jeanlinux" rel="me" target="_blank"><img src="img/twitter.png" alt="@jeanlinux"></a>
-          <a href="http://facebook.com/jeanlinux" rel="me" target="_blank"><img src="img/gowalla.png"></a>
+          <a href="<%= @artist.getTwitterlink %>" rel="me" target="_blank"><img src="img/twitter.png" alt="@jeanlinux"></a>
+          <a href="<%= @artist.getFacebooklink %>"  rel="me" target="_blank"><img src="img/gowalla.png"></a>
         </div>
         <div class="sep"></div>
         <ul class="numbers clearfix">
@@ -49,10 +49,10 @@
         <p>Total Arts in Gallery - <%= @artist.arts.count %> </p>
 
         <div class="artslist clearfix">
-          <%# render :partial => "arts" %>
+          <%= render :partial => "arts" %>
         </div>
 
-        <span><a href="#">See all...</a></span>
+        <span> <%= link_to "See all...", gallery_url(@artist.id)  %> </span>
       </div>
     </div>
   </section>

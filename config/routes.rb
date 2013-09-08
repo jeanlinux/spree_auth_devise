@@ -28,6 +28,7 @@ Spree::Core::Engine.routes.prepend do
 
   #artist profile page
   match '/artists/:id' => 'artists#show', :via => :get, :as => :artist
+  match '/artist_gallery/:id' => 'artists#gallery', :via => :get, :as => :gallery
 
   resource :session do
     member do
