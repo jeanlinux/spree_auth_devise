@@ -21,9 +21,11 @@ module Spree
 
     # Setup accessible (or protected) attributes for your model
     attr_accessible :email, :password, :password_confirmation, :remember_me, :persistence_token, :login, :full_name,
-                    :request_telephone,:city,:country_id,:facebook,:twitter,:about,:website
+                    :request_telephone,:city,:country_id,:facebook,:twitter,:about,:website, :terms
 
+    attr_accessor :terms
 
+    validates_acceptance_of :terms, :accept => "1", :on => :create
 
     users_table_name = User.table_name
     roles_table_name = Role.table_name

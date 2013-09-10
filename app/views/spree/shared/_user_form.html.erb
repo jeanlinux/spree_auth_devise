@@ -37,10 +37,22 @@
     <%= f.label :artist_request_toggle, t(:artist_request_toggle) %>
   </label>
 </p>
+
+
 <p id="request_telephone">
   <%= f.label :request_telephone, t(:request_telephone) %><span class="required">*</span><br />
   <%= f.text_field :request_telephone, :class => 'title required' %>
 </p>
+
+
+      <p>
+       <label>
+         <%= f.check_box :terms %>
+         <%= f.label :terms,  (link_to 'I Agree To The Terms and Conditions', '/terms-ofuse') %>
+       </label>
+       </p>
+       
+
 <%	elsif @user.has_spree_role? :artist %>
       <p>
         <%= f.label :about_artist, t(:about_artist) %><br />
@@ -62,7 +74,17 @@
         <%= f.text_field :website %>
       </p>
 
+      <p>
+      <label>
+        <%= f.check_box :terms %>
+        <%= f.label :terms, t(:terms) %>
+      </label>
+      </p>
+
+
 <%	end  %>
+
+
 
 <div data-hook="signup_below_password_fields"></div>
 
