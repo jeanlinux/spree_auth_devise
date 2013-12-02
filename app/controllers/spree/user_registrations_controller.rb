@@ -26,6 +26,8 @@ class Spree::UserRegistrationsController < Devise::RegistrationsController
     if resource.save
       if !params[:spree_user][:request_telephone].blank?
         #user requested to be an artist in the syste,
+        #send mail to administrator
+        Spree::ArtistMailer.artist_signup(@user).deliver
         set_flash_message(:notice, :artist_request_signed_up)
       else
         set_flash_message(:notice, :signed_up)
