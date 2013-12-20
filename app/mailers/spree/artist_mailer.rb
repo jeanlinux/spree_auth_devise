@@ -1,4 +1,5 @@
 superclass = defined?(Spree::BaseMailer) ? Spree::BaseMailer : ActionMailer::Base
+
 class Spree::ArtistMailer < superclass
   def artist_signup(user)
 
